@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Analoug</title>
+</head>
+
+<body>
+    <div id="clockContainer">
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+    </div>
+</body>
+
+</html>
+
+<style>
+    #clockContainer {
+        position: relative;
+        margin: auto;
+        height: 40vw;
+        width: 40vw;
+        background-color: aqua;
+        background-image: url(https://upload.wikimedia.org//wikipedia/commons//c/cf//Clock_background.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        back
+
+
+    }
+
+
+    #hour,
+    #minute,
+    #second {
+        position: absolute;
+        background: rgb(177, 189, 177);
+        border-radius: 10px;
+        transform-origin: bottom;
+    }
+
+    #hour {
+        width: 1.8%;
+        height: 25%;
+        top: 25%;
+        left: 48.85%;
+
+    }
+
+    #minute {
+        width: 1.6%;
+        height: 30%;
+        top: 19%;
+        left: 48.9%;
+
+    }
+
+    #second {
+        width: 1%;
+        height: 40%;
+        top: 9%;
+        left: 49.25%;
+
+    }
+</style>
+<script>
+    setInterval(() => {
+        d = new Date();
+        hr = d.getHours();
+        min = d.getMinutes();
+        sec = d.getSeconds();
+        hr_rotation = 30 * hr + min / 2;
+        min_rotation = 6 * min;
+        sec_rotation = 6 * sec;
+
+        hour.style.transform = `rotate(${hr_rotation}deg)`;
+        minute.style.transform = `rotate(${min_rotation}deg)`;
+        second.style.transform = `rotate(${sec_rotation}deg)`;
+    }, 1000);
+</script>
